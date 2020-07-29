@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+    # -*- coding: UTF-8 -*-
 # SPDX-License-Identifier: GPL-3.0-or-later
 """ Tutorial Dois
 Changelog
@@ -9,7 +9,7 @@ Changelog
           Adiciona o gerenciador em chamadas http via bottle
    """
 
-from bottle import default_app, route
+from bottle import default_app, route, static_file
 from main import Main
 
 @route('/')
@@ -19,6 +19,18 @@ def hello_world():
 @route('/oi')
 def oi_mundo():
     return "Tutorial Dois - ensaiando uma nova rota"
+
+@route('/vs')
+def vs_mundo():
+    return "Tutorial Dois - Versão do sistema: {}".format(Main().get_versao())
+
+@route('/doc/<filename:re:.*\.html>')
+def doc_mundo(filename):
+    return static_file(filename, root='/home/pimentelufrj/dev/alpha/docs/build/html', mimetype='text/html')
+
+@route('/doc/<filename:re:.*\.css>')
+def css_mundo(filename):
+    return static_file(filename, root='/home/pimentelufrj/dev/alpha/docs/build/html/', mimetype='text/css')
 
 application = default_app()
 
