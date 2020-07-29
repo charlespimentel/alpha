@@ -30,5 +30,5 @@ class Main:
         """
         return self.versao
 
-if __name__ =="__main__":
+if __name__ == "__main__":
     print (Main().get_versao())
