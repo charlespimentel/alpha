@@ -26,7 +26,11 @@ def vs_mundo():
 
 @route('/<filename:re:.*\.py>')
 def py_mundo(filename):
-    return static_file(filename, root='/home/pimentelufrj/dev/alpha/src', mimetype='text/pythonl')
+    return static_file(filename, root='/home/pimentelufrj/dev/alpha/src', mimetype='text/python')
+
+@route('/doc/<filename:re:.*\.html>')
+def doc_mundo(filename):
+    return static_file(filename, root='/home/pimentelufrj/dev/alpha/docs/build/html', mimetype='text/html')
 
 @route('/doc/<filename:re:.*\.css>')
 def css_mundo(filename):

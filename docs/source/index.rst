@@ -10,6 +10,30 @@ Welcome to Tutorial Dois's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+Modulo Vitollino
+----------------
+
+.. note::
+    Engenho de notes do Superpython.
+
+.. automodule:: vitollino.main
+    :members:
+    :undoc-members:
+    :platform: Web
+    :synopsis: Engenho de Jogos.
+
+Modulo Quarto
+-------------
+
+.. note::
+    Jogo do Quarto trazido do Superpython.
+
+.. automodule:: quarto
+    :members:
+    :undoc-members:
+    :platform: Web
+    :synopsis: Jogo do quarto.
+
 Modulo Main
 -----------
 
