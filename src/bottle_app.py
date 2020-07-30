@@ -14,7 +14,7 @@ from main import Main
 
 @route('/')
 def hello_world():
-    return "Tutorial Dois - aprendendo Git e Bottle"
+    return static_file('index.html', root='/home/pimentelufrj/dev/alpha/src/', mimetype='text/html')
 
 @route('/oi')
 def oi_mundo():
@@ -24,14 +24,13 @@ def oi_mundo():
 def vs_mundo():
     return "Tutorial Dois - Versão do sistema: {}".format(Main().get_versao())
 
-@route('/doc/<filename:re:.*\.html>')
-def doc_mundo(filename):
-    return static_file(filename, root='/home/pimentelufrj/dev/alpha/docs/build/html', mimetype='text/html')
+@route('/<filename:re:.*\.py>')
+def py_mundo(filename):
+    return static_file(filename, root='/home/pimentelufrj/dev/alpha/src', mimetype='text/pythonl')
 
 @route('/doc/<filename:re:.*\.css>')
 def css_mundo(filename):
     return static_file(filename, root='/home/pimentelufrj/dev/alpha/docs/build/html/', mimetype='text/css')
 
 application = default_app()
-
 
